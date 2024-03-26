@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Encapsulation Questionnaire</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: blanchedalmond;
+        }
+        form {
+            display: inline-block;
+            text-align: left;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        input[type="submit"] {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Encapsulation in JAVA</h1>
+    <form method="POST" action="encapscore.php">
+        <p><strong>Question 1:</strong> What is encapsulation in Java?</p>
+        <ul>
+            <li><input type='radio' name='q1' value='A'> A. A way to hide the implementation details of a class</li>
+            <li><input type='radio' name='q1' value='B'> B. A way to make all class members public</li>
+            <li><input type='radio' name='q1' value='C'> C. A way to create multiple instances of a class</li>
+            <li><input type='radio' name='q1' value='D'> D. A way to inherit from multiple classes</li>
+        </ul>
+
+        <p><strong>Question 2:</strong> Which access modifier is used for a private member variable in Java for encapsulation?</p>
+        <ul>
+            <li><input type='radio' name='q2' value='A'> A. public</li>
+            <li><input type='radio' name='q2' value='B'> B. private</li>
+            <li><input type='radio' name='q2' value='C'> C. protected</li>
+            <li><input type='radio' name='q2' value='D'> D. default</li>
+        </ul>
+
+        <p><strong>Question 3:</strong> Which of the following is an advantage of encapsulation?</p>
+        <ul>
+            <li><input type='radio' name='q3' value='A'> A. Increased code complexity</li>
+            <li><input type='radio' name='q3' value='B'> B. Improved code reusability</li>
+            <li><input type='radio' name='q3' value='C'> C. Decreased control over data access</li>
+            <li><input type='radio' name='q3' value='D'> D. Enhanced security</li>
+        </ul>
+
+        <p><strong>Question 4:</strong> How does encapsulation help in maintaining code?</p>
+        <ul>
+            <li><input type='radio' name='q4' value='A'> A. By exposing all class members</li>
+            <li><input type='radio' name='q4' value='B'> B. By hiding the implementation details</li>
+            <li><input type='radio' name='q4' value='C'> C. By making all class members public</li>
+            <li><input type='radio' name='q4' value='D'> D. By avoiding the use of methods</li>
+        </ul>
+
+        <p><strong>Question 5:</strong> Which principle of OOP is closely related to encapsulation?</p>
+        <ul>
+            <li><input type='radio' name='q5' value='A'> A. Inheritance</li>
+            <li><input type='radio' name='q5' value='B'> B. Polymorphism</li>
+            <li><input type='radio' name='q5' value='C'> C. Abstraction</li>
+            <li><input type='radio' name='q5' value='D'> D. Modularity</li>
+        </ul>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

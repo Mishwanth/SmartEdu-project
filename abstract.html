@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Abstraction Questionnaire</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: blanchedalmond;
+        }
+
+        form {
+            display: inline-block;
+            text-align: left;
+            margin: 0 auto;
+            max-width: 600px;
+            padding: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Abstraction in Java</h1>
+    <form action="abstractscore.php" method="post">
+        <p><strong>Question 1:</strong> What is abstraction in Java?</p>
+        <ul>
+            <li><input type='radio' name='q1' value='A'> A. A way to make a class concrete</li>
+            <li><input type='radio' name='q1' value='B'> B. A way to hide the complexity of a class and only show the necessary parts</li>
+            <li><input type='radio' name='q1' value='C'> C. A way to create multiple instances of a class</li>
+            <li><input type='radio' name='q1' value='D'> D. A way to make all class members public</li>
+        </ul>
+
+        <p><strong>Question 2:</strong> Which keyword is used to achieve abstraction in Java?</p>
+        <ul>
+            <li><input type='radio' name='q2' value='A'> A. abstract</li>
+            <li><input type='radio' name='q2' value='B'> B. class</li>
+            <li><input type='radio' name='q2' value='C'> C. extends</li>
+            <li><input type='radio' name='q2' value='D'> D. implements</li>
+        </ul>
+
+        <p><strong>Question 3:</strong> Which of the following is an example of abstraction?</p>
+        <ul>
+            <li><input type='radio' name='q3' value='A'> A. A method with a detailed implementation</li>
+            <li><input type='radio' name='q3' value='B'> B. A method with a simple implementation</li>
+            <li><input type='radio' name='q3' value='C'> C. A method with no implementation</li>
+            <li><input type='radio' name='q3' value='D'> D. A method with private access</li>
+        </ul>
+
+        <p><strong>Question 4:</strong> How does abstraction help in managing complexity?</p>
+        <ul>
+            <li><input type='radio' name='q4' value='A'> A. By exposing all class members</li>
+            <li><input type='radio' name='q4' value='B'> B. By hiding the complexity of a class</li>
+            <li><input type='radio' name='q4' value='C'> C. By making all class members public</li>
+            <li><input type='radio' name='q4' value='D'> D. By avoiding the use of methods</li>
+        </ul>
+
+        <p><strong>Question 5:</strong> Which principle of OOP is closely related to abstraction?</p>
+        <ul>
+            <li><input type='radio' name='q5' value='A'> A. Encapsulation</li>
+            <li><input type='radio' name='q5' value='B'> B. Inheritance</li>
+            <li><input type='radio' name='q5' value='C'> C. Polymorphism</li>
+            <li><input type='radio' name='q5' value='D'> D. Modularity</li>
+        </ul>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

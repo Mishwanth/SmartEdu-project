@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Two Buttons</title>
+    <style>
+        .symbol-container {
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+        }
+    
+        img {
+            width: 150px;
+            height: 150px;
+        }
+    
+        span {
+            font-size: 36px; 
+        }
+    </style>
+    
+</head>
+<body>
+    <center>
+    <h1><u>SUBJECTS:</u></h1>
+    <div>
+        <a href="http://127.0.0.1:5500/javatopics.html">
+            <div class="symbol-container">
+                <span><br><br>JAVA  </span>
+                <img src="Java-Emblem.jpg">
+            </div>
+        </a><br><br><br>
+    </div>
+
+    <div>
+        <a href="http://127.0.0.1:5500/dstopics.html">
+            <div class="symbol-container">
+                <span>DATA STRUCTURES</span>
+                <img src="ds.jpg">
+            </div>
+        </a><br><br>
+    </div>
+    <script>
+        function buttonClicked(buttonId) {
+            alert("Button " + buttonId + " clicked!");
+        }
+    </script>      
+    </center>
+</body>
+</html>

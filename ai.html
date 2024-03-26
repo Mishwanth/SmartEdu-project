@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spark Education</title>
+   <style>
+
+    
+    /* Basic styling*/
+    body{
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      border-radius: 25px;
+      background-color: #fece54;
+    }
+    header {
+  background-image: url(spark.img);
+  /* filter: blur(2px); */
+  border-radius: 25px;
+  padding: 75px; /* Increased padding */
+  background-color: aliceblue;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(230, 5, 5, 0.1);
+  position: relative; /* Add position relative for overlay positioning */
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(spark.img); /* Same as header background image */
+  filter: blur(2px); /* Adjust blur as needed */
+  z-index: -1; /* Ensure the overlay is behind the content */
+}
+
+header h1 {
+  position: relative; /* Ensure text is above overlay */
+  z-index: 1; /* Ensure text is above overlay */
+}
+
+    head h1{
+        width: z;
+    }
+    nav{
+      text-align: center;
+      margin-bottom: 20px;
+      background-color: #333;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      height: 5%;
+    }
+    nav a{
+      margin: 0 10px;
+      text-decoration: none;
+      color: #fff;
+      padding: 5px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+      position: relative;
+    }
+    nav a:hover,
+    nav a:focus {
+      background-color: rgb(78, 132, 154);
+      color: #fff;
+    }
+    nav a:hover::after,
+    nav a:focus::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 0;
+      width: 100%;
+      height: 5 px;
+      background-color: #d6d6d6;
+      border-radius: 5px;
+    }
+    .raise:hover,
+    .raise:focus {
+      box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+      transform: translateY(-0.25em);
+    }
+    section{
+      padding: 20px;
+      background-color: #f0e6dd;
+      border-radius: 5px;
+      color:#333;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      color: #333;
+      
+    }
+    .card {
+ width: 190px;
+ height: 254px;
+ background: #f5f5f5;
+ padding: 2rem 1.5rem;
+ transition: box-shadow .3s ease, transform .2s ease;
+}
+
+.card-info {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ transition: transform .2s ease, opacity .2s ease;
+}
+
+/*Image*/
+.card-avatar {
+ --size: 60px;
+ background: linear-gradient(to top, #f1e1c1 0%, #fcbc97 100%);
+ width: var(--size);
+ height: var(--size);
+ border-radius: 50%;
+ transition: transform .2s ease;
+ margin-bottom: 1rem;
+}
+
+
+/*Card footer*/
+.card-social {
+ transform: translateY(200%);
+ display: flex;
+ justify-content: space-around;
+ width: 100%;
+ opacity: 0;
+ transition: transform .2s ease, opacity .2s ease;
+}
+
+.card-social__item {
+ list-style: none;
+}
+
+.card-social__item svg {
+ display: block;
+ height: 18px;
+ width: 18px;
+ fill: #515F65;
+ cursor: pointer;
+ transition: fill 0.2s ease ,transform 0.2s ease;
+}
+
+/*Text*/
+.card-title {
+ color: #333;
+ font-size: 1.5em;
+ font-weight: 600;
+ line-height: 2rem;
+}
+
+.card-subtitle {
+ color: #859ba8;
+ font-size: 0.8em;
+}
+
+/*Hover*/
+.card:hover {
+ box-shadow: 0 8px 50px #23232333;
+ z-index: 3;
+}
+
+.card:hover .card-info {
+ transform: translateY(-5%);
+}
+
+.card:hover .card-social {
+ transform: translateY(100%);
+ opacity: 1;
+}
+
+.card-social__item svg:hover {
+ fill: #232323;
+ transform: scale(1.1);
+}
+
+.card-avatar:hover {
+ transform: scale(1.1);
+}
+   #navbar{
+    background-color: #333;
+   }  
+    form{
+      margin-bottom: 20px;
+    }
+    input[type="text"]{
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+    }
+    button[type="submit"]{
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button[type="submit"]:hover{
+      background-color: #3e8e41;
+    }
+    footer{
+      background-color: #f0f0f0;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    main {
+  display: flex;
+  flex-direction: column;
+  
+  align-items: left;
+  padding: 50px;
+  font-family: 'Roboto', sans-serif;
+}
+.card-container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: middle;
+}
+
+.card {
+  width: 24rem;
+  height: 36rem;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  color: white;
+  opacity: 1;
+  box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.2);
+  display :flex;
+  margin-right: 1rem;
+ 
+  img {
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.9;
+    transition: opacity .2s ease-out;
+  }
+
+  h2 {
+    position: absolute;
+    inset: auto auto 30px 30px;
+    margin: 0;
+    transition: inset .3s .3s ease-out;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: normal;
+    text-transform: uppercase;
+    color: white;
+    
+  }
+  
+  p, a {
+    position: absolute;
+    opacity: 0;
+    max-width: 80%;
+    transition: opacity .3s ease-out;
+    color: white;
+  }
+  
+  p {
+    inset: auto auto 60px 50px;
+  }
+  
+  a {
+    inset: auto auto 40px 30px;
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  &:hover h2 {
+    inset: auto auto 600px 30px;
+    transition: inset .5s ease-out;
+  }
+  
+  &:hover p, &:hover a {
+    opacity: 1;
+    transition: opacity .5s .1s ease-in;
+  }
+  
+  &:hover img {
+    transition: opacity .3s ease-in;
+    opacity: 1;
+  }
+
+}
+.card2-avatar:hover {
+ transform: scale(1.1);
+}
+   #navbar{
+    background-color: #333;
+   }  
+    form{
+      margin-bottom: 20px;
+    }
+    input[type="text"]{
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+    }
+    button[type="submit"]{
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button[type="submit"]:hover{
+      background-color: #3e8e41;
+    }
+    footer{
+      background-color: #f0f0f0;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    main {
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+  align-items: right;
+  padding: 50px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.card2 {
+  width: 28rem;
+  height: 40rem;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  color: white;
+  opacity: 1;
+  box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.2);
+ 
+  img {
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.9;
+    transition: opacity .2s ease-out;
+  }
+
+  h2 {
+    position: absolute;
+    inset: auto auto 30px 30px;
+    margin: 0;
+    transition: inset .3s .3s ease-out;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: normal;
+    text-transform: uppercase;
+    color: white;
+    
+  }
+  
+  p, a {
+    position: absolute;
+    opacity: 0;
+    max-width: 80%;
+    transition: opacity .3s ease-out;
+    color: white;
+  }
+  
+  p {
+    inset: auto auto 1px 30px;
+  }
+  
+  a {
+    inset: auto auto 40px 30px;
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  &:hover h2 {
+    inset: auto auto 595px 30px;
+    transition: inset .5s ease-out;
+  }
+  
+  &:hover p, &:hover a {
+    opacity: 1;
+    transition: opacity .5s .1s ease-in;
+  }
+  
+  &:hover img {
+    transition: opacity .3s ease-in;
+    opacity: 1;
+  }
+
+}
+
+.material-symbols-outlined {
+  vertical-align: right;
+}
+
+
+
+/* css events for service section */
+.card-container2 {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: middle;
+}
+
+.card-service {
+  width: 35rem;
+  height: 36rem;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  color: white;
+  opacity: 1;
+  box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.2);
+  display :flex;
+  margin-right: 1rem;
+  transition: transform .3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+.center {
+display: block;
+/* margin-left: auto;
+margin-right: auto; */
+
+width:100%;
+}
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+  text-align: center;
+}
+
+.card-content h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: white;
+}
+
+
+
+
+
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to Spark Education!</h1>
+  </header>
+  <nav>
+    <a href="#home">Home</a>
+    <!-- <a href="#about">About Us</a> -->
+    <a href="#services">Services</a>
+    <a href="#contact">Contact Us</a>
+  </nav>
+  <section id="home">
+
+    <h2><center>Home</center></h2>
+    <p><center><b>Welcome to Spark Education, your go-to platform for enhancing your learning experience!</b></center></p>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+<main>
+    <div class = "card-container">
+  <div class = "card">
+    <img src="https://c1.wallpaperflare.com/preview/167/210/341/book-dark-page-open.jpg " alt="">
+    <span class="card-content">
+      <h2>
+        <u>Smart Education</u>
+      </h2> 
+      <p><b>
+        <u>Personalized Learning:</u> Smart education aims to cater to the individual learning needs and preferences of students. Through adaptive learning platforms and personalized learning paths, students can progress at their own pace and focus on areas where they need more support.
+
+<br><br><u>Interactive Content:</u> It involves the use of interactive digital content, such as videos, simulations, and games, to make learning more engaging and immersive. Interactive content encourages active participation and helps in better understanding of concepts.
+
+<br><br><u>Collaborative Learning:</u> Smart education promotes collaboration and communication among students and teachers. Online collaboration tools, discussion forums, and group projects facilitate collaborative learning experiences, allowing students to share ideas, work together on projects, and learn from each other.
+      </p></b>
+      <!-- <a href="#" class="button">
+        Find out more 
+        <span class="material-symbols-outlined">
+          arrow_right_alt
+        </span>
+      </a> -->
+    </span>
+</div>
+
+
+
+  <div class = "card2">
+    <img src="https://wallpapercrafter.com/desktop2/815795-dark-gloomy-books-pages-paper-read-book-bound.jpg " alt="">
+    <span class="card-content">
+      <h2>
+        <u>Importance</u>
+      </h2> 
+      <p><b>
+        <u>Empowering Personalised Learning:</u>One of the most significant advantages of smart education lies in its ability to provide personalised learning experiences. Every student has unique learning preferences, strengths, and weaknesses. Smart education leverages advanced analytics and AI-driven algorithms to track students’ progress and tailor content to their individual needs.<br><br>
+        <u>Enhancing Accessibility and Inclusivity: </u>Smart education has the potential to break down geographical and socioeconomic barriers. Online learning platforms, virtual classrooms, and digital resources make education accessible to individuals who might not have had such opportunities before. <br><br>
+       <u>Preparing for the Digital Future: </u>The rapid pace of technological advancement means that today’s students are preparing for jobs that may not even exist yet. Smart education equips students with digital literacy and tech-savviness, ensuring they are comfortable with the tools and platforms that will be integral to their future careers <br>
+
+      </p></b>
+      <!-- <a href="#" class="button">
+        Find out more 
+        <span class="material-symbols-outlined">
+          arrow_right_alt
+        </span>
+      </a> -->
+    </span>
+  </div>
+    </div>
+</main>
+  </section>
+
+
+
+
+
+  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    
+    
+
+    <section id="services">
+        <h2><center>Services</center></h2>
+        <div class="card-container2">
+          <div class="card-service" onclick="location.href='https://paidcourses.com';">
+            <img class = "center" src="https://www.lbcc.edu/sites/main/files/imagecache/pod/main-images/istockphoto-1402925899-1024x1024_0.jpg?1661289105" alt="Paid Courses" >
+            <span class="card-content">
+              <h2>
+                <u>Paid Courses</u>
+              </h2>
+            </span>
+          </div>
+          <div class="card-service" onclick="location.href='https://chat.openai.com/auth/login';">
+            <img class = "center"src="https://www.shutterstock.com/image-vector/chatbot-using-chatting-artificial-intelligence-600nw-2258695375.jpg" alt="AI Doubt Solving">
+            <span class="card-content">
+              <h2>
+                <u>AI Doubt Solving</u>
+              </h2>
+            </span>
+          </div>
+          <div class="card-service" onclick="location.href='javatopics.html';">
+            <img class = "center"src="assessment.avif">
+            <span class="card-content">
+              <h2>
+                <u>Test Assessment</u>
+              </h2>
+            </span>
+          </div>
+        </div>
+      </section>
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Have questions or feedback? We'd love to hear from you! Reach out to us at <a href="mailto:contact@sparkeducation.com">contact@sparkeducation.com</a>.</p>
+  </section>
+  <footer>
+    <p>© 2024 Spark Education. All rights reserved.</p>
+  </footer>
+</body>
+</html>
